@@ -65,6 +65,30 @@
     <Compile Include="Applications\Controls\ctrlApplicationBasicInfo.Designer.cs">
       <DependentUpon>ctrlApplicationBasicInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Detain License\frmDetainLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Detain License\frmDetainLicenseApplication.Designer.cs">
+      <DependentUpon>frmDetainLicenseApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\Detain License\frmDetainLicenseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Detain License\frmDetainLicenseList.Designer.cs">
+      <DependentUpon>frmDetainLicenseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\Detain License\frmReleaseDetainLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Detain License\frmReleaseDetainLicense.Designer.cs">
+      <DependentUpon>frmReleaseDetainLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\frmReplaceLostOrDamageLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\frmReplaceLostOrDamageLicenseApplication.Designer.cs">
+      <DependentUpon>frmReplaceLostOrDamageLicenseApplication.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Local Driving License\ctrlLocalDrivingLicenseApplicationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -300,6 +324,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Controls\ctrlApplicationBasicInfo.resx">
       <DependentUpon>ctrlApplicationBasicInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Detain License\frmDetainLicenseApplication.resx">
+      <DependentUpon>frmDetainLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Detain License\frmDetainLicenseList.resx">
+      <DependentUpon>frmDetainLicenseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Detain License\frmReleaseDetainLicense.resx">
+      <DependentUpon>frmReleaseDetainLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\frmReplaceLostOrDamageLicenseApplication.resx">
+      <DependentUpon>frmReplaceLostOrDamageLicenseApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Local Driving License\ctrlLocalDrivingLicenseApplicationInfo.resx">
       <DependentUpon>ctrlLocalDrivingLicenseApplicationInfo.cs</DependentUpon>

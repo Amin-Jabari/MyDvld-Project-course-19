@@ -25,7 +25,30 @@ namespace DVLD.Driver
 
         private void frmDriverList_Load(object sender, EventArgs e)
         {
-            dgvDrivers.DataSource = clsDriver.GetAllDrivers();
+        _dtAllDrivers = clsDriver.GetAllDrivers();
+            dgvDrivers.DataSource = _dtAllDrivers;
+
+
+
+            lblRecordsCount.Text = dgvDrivers.Rows.Count.ToString();
+
+            dgvDrivers.Columns[0].HeaderText = "Driver ID";
+            dgvDrivers.Columns[0].Width = 100;
+
+            dgvDrivers.Columns[1].HeaderText = "Person ID";
+            dgvDrivers.Columns[1].Width = 100;
+
+            dgvDrivers.Columns[2].HeaderText = "National No";
+            dgvDrivers.Columns[2].Width = 110;
+
+            dgvDrivers.Columns[3].HeaderText = "Full Name";
+            dgvDrivers.Columns[3].Width = 300;
+
+            dgvDrivers.Columns[4].HeaderText = "Date";
+            dgvDrivers.Columns[4].Width = 140;
+
+            dgvDrivers.Columns[5].HeaderText = "Active License";
+            dgvDrivers.Columns[5].Width = 100;
         }
 
         private void cbFilterBy_TextChanged(object sender, EventArgs e)
@@ -75,7 +98,7 @@ namespace DVLD.Driver
                     break;
             }
 
-            // Reset the filters in case nothing selected or filter value contains nothing.
+         
             if (txtFilterValue.Text.Trim() == "" || FilterColumn == "None")
             {
                 _dtAllDrivers.DefaultView.RowFilter = "";
@@ -83,19 +106,16 @@ namespace DVLD.Driver
                 return;
             }
 
-            // Checking if the column is numeric or text string
+            
             if (FilterColumn == "DriverID" || FilterColumn == "PersonID")
             {
-                // In this case we deal with numbers not string
                 _dtAllDrivers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilterValue.Text.Trim());
             }
             else
             {
-                // Search using LIKE with '%' on both sides to match text anywhere in the cell
                 _dtAllDrivers.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", FilterColumn, txtFilterValue.Text.Trim());
             }
 
-            // Update the record count after applying the filter
             lblRecordsCount.Text = dgvDrivers.Rows.Count.ToString();
             } 
     }

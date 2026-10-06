@@ -26,13 +26,15 @@ namespace DVLD_Buisness
         {
             get
             {
-                return clsPerson.Find(ApplicantPersonID).FullName;
+              return  PersonInfo.FullName;
+               // return clsPerson.Find(ApplicantPersonID).FullName;
             }
         }
         public DateTime ApplicationDate { set; get; }
         public int ApplicationTypeID { set; get; }
         public clsApplicationType ApplicationTypeInfo;
         public enApplicationStatus ApplicationStatus { set; get; }
+        public clsPerson PersonInfo;
         public string StatusText
         {
             get
@@ -89,6 +91,7 @@ namespace DVLD_Buisness
             this.PaidFees = PaidFees;
             this.CreatedByUserID = CreatedByUserID;
             this.CreatedByUserInfo = clsUser.FindByUserID(CreatedByUserID);
+            this.PersonInfo=clsPerson.Find (ApplicantPersonID);
             Mode = enMode.Update;
         }
 

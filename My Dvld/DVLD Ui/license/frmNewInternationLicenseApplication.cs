@@ -85,42 +85,6 @@ namespace DVLD.license
             btnIssueLicense.Enabled = false;
         }
 
-        private void ctrlDriverLicenseInfoWithFilter1_OnLicenseSelected(int LicenseID,clsLicense LicenseInfo)
-        {
-            llShowLicenseHistory.Enabled = true;
-            llShowLicenseInfo.Enabled = true;
-
-            if (LicenseID != -1)
-            {
-
-              llShowLicenseInfo.Enabled=false;
-              llShowLicenseHistory.Enabled=false;
-
-                return;
-            }
-            lblLocalLicenseID.Text = LicenseID.ToString();
-            
-
-            if (LicenseInfo.LiceseClassInfo.LicenseClassID != 3)
-            {
-                MessageBox.Show("Selected License should be Class 3, select another one.", "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            int ActiveInternaionalLicenseID = clsInternationalLicense.GetActiveInternationalLicenseIDByDriverID(ctrlDriverLicenseInfoWithFilter1.SelectLicenseInfo.DriverID);
-
-            if (ActiveInternaionalLicenseID != -1)
-            {
-                MessageBox.Show("Person already have an active international license with ID = " + ActiveInternaionalLicenseID.ToString(), "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                llShowLicenseInfo.Enabled = true;
-                _InternationalLicenseID = ActiveInternaionalLicenseID;
-                btnIssueLicense.Enabled = false;
-                return;
-            }
-         
-            btnIssueLicense.Enabled = true;
-            _LicenseID = LicenseID;
-        }
 
         private void llShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

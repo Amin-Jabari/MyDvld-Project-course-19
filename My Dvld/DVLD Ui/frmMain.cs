@@ -1,7 +1,9 @@
 ﻿using DVLD.Applications;
+using DVLD.Applications.Detain_License;
 using DVLD.Applications.Local_Driving_License;
 using DVLD.Applications.Test_Type;
 using DVLD.Classes;
+using DVLD.Driver;
 using DVLD.license;
 using DVLD.license.InternationalLicense;
 using DVLD.license.RenewLicense;
@@ -112,12 +114,12 @@ namespace DVLD
 
         private void releaseDetainedDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ShowChildForm(new frmReleaseDetainLicense());
         }
 
         private void retakeTestToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-         
+            ShowChildForm(new frmLocalDrivingLicenseApplicationList());
         }
 
       
@@ -134,7 +136,7 @@ namespace DVLD
 
         private void driversToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+            ShowChildForm(new frmDriverList());
 
         }
 
@@ -148,25 +150,25 @@ namespace DVLD
 
         private void ReplacementLostOrDamagedDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            ShowChildForm(new frmReplaceLostOrDamageLicenseApplication());
 
         }
 
         private void ManageDetainedLicensestoolStripMenuItem1_Click(object sender, EventArgs e)
         {
-        
+            ShowChildForm(new frmDetainLicenseList());
 
         }
 
         private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-       
+            ShowChildForm(new frmDetainLicenseApplication());
 
         }
 
         private void releaseDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            ShowChildForm(new frmReleaseDetainLicense());
 
         }
     }
